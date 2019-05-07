@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <navigator url="../../page1/subpage1/subpage1" hover-class="navigator-hover" open-type="navigate">
+    page1/subpage1
+  </navigator>
+  <navigator url="../../page1/subpage2/subpage2" hover-class="navigator-hover" open-type="navigate">
+    page1/subpage2
+  </navigator>
+  <navigator url="../../page2/subpage1/subpage1" hover-class="navigator-hover" open-type="navigate">
+    page2/subpage1
+  </navigator>
+  <navigator url="../../page2/subpage2/subpage2" hover-class="navigator-hover" open-type="navigate">
+    page2/subpage2
+  </navigator>
+</view>

@@ -1,0 +1,64 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": [
+			{
+				"type": "folder",
+				"value": "test"
+			},
+			{
+				"type": "suffix",
+				"value": ".md"
+			},
+			{
+				"type": "folder",
+				"value": "DOC"
+			},
+			{
+				"type": "folder",
+				"value": "img"
+			},
+			{
+				"type": "folder",
+				"value": ".vscode"
+			}
+		]
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false,
+		"checkInvalidKey": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.6.6",
+	"appid": "wxed3ac2ffda8a0e45",
+	"projectname": "wechat-package",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": []
+		}
+	}
+}
