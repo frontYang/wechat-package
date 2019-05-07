@@ -40,7 +40,6 @@
 +-- utils
 |   +-- util.js(公用方法)
 |   +-- config.js(项目配置相关)
-|   +-- sdk.js(用户日志统计API)
 +-- app.js
 +-- app.json
 +-- app.wxss

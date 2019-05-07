@@ -1,6 +1,5 @@
 //app.js
 const { CONFIG, INTF } = require('./utils/config.js')
-const { wxLogin } = require('./utils/sdk.js')
 const api = require('./utils/util.js')
 const canvasApi = require('./utils/canvasApi.js')
 
@@ -10,30 +9,16 @@ App({
     let channel = ''
     if(options.referrerInfo.extraData && options.referrerInfo.extraData.trackSZ){
       channel = options.referrerInfo.extraData.trackSZ
-    }    
+    }
     // 获取用户缓存信息
     this.getUserInfo().then(userInfo => {
       this.log(`app-getStorage-userinfo: ${JSON.stringify(userInfo)}`)
       this.globalData.userInfo = userInfo;
     })
-    
+
     // login
     this.getOpenid(channel).then(openid => {
       this.globalData.openid = openid;
-      wxLogin({
-        openid: openid, // openid
-        appid: 'wxe20823f70a73c961', // appid
-        gameversion: '1.3.1', // 版本号
-        success: res => { // 请求成功回调
-          app.log(`请求成功`)
-        },
-        fail: res => { // 请求失败回调
-          wx.showToast({
-            title: res.message,
-            icon: 'none'
-          })
-        }
-      })
     })
 
     this.clearStorage()
@@ -41,7 +26,7 @@ App({
 
   // 清除 缓存
   clearStorage(){
-    
+
   },
 
   /* 登录 */
@@ -55,13 +40,13 @@ App({
               code: res.code,
               channel: channel || ''
             }).then(res => {
-              var openid = res.data.openid  
+              var openid = res.data.openid
               wx.setStorage({
                 key: 'openid',
                 data: openid,
               });
               this.globalData.openid = openid
-              resolve()  
+              resolve()
             }).catch(res => {
               wx.showToast({
                 title: res.message,
@@ -77,10 +62,10 @@ App({
   },
 
   /* 获取openid，后期一起优化，暂时这样处理 */
-  getOpenid(channel){    
+  getOpenid(channel){
     return new Promise((resolve, reject) => {
       wx.getStorage({
-        key: 'openid',        
+        key: 'openid',
         success: (res) => {
           this.log(`[getOpenid-success]getStorage-openid: ${JSON.stringify(res.data)}`)
           resolve(res.data)
@@ -104,11 +89,11 @@ App({
           this.log(`有缓存用户信息：${JSON.stringify(res.data)}`)
           resolve(res.data)
         },
-        fail: (res) => {          
+        fail: (res) => {
           reject(res)
         }
       });
-    }).catch(res => {      
+    }).catch(res => {
     })
   },
 
@@ -154,11 +139,11 @@ App({
         data: userInfo,
       })
     }
-    
+
     if (this.globalData.userInfo != '' && this.globalData.userInfo != undefined) {
       // 从全局获取
       setUserStorage(this.globalData.userInfo, true)
-    } else if (canIUse) { 
+    } else if (canIUse) {
       // 缓存获取
       this.getUserInfo().then(userInfo => {
         setUserStorage(userInfo)
@@ -189,7 +174,7 @@ App({
       _this.setData({
         hasUserInfo: e.detail.userInfo != undefined ? true : false
       })
-      
+
       if(_this.data.hasUserInfo){
         // 获取用户信息成功
         _this.setData({
@@ -206,8 +191,8 @@ App({
 
         this.getOpenid().then(openid => {
           // 获取成功后相关操作
-          resolve(openid) 
-        })        
+          resolve(openid)
+        })
       }
     }).catch(() => {
       this.log('授权失败')
@@ -232,14 +217,14 @@ App({
           confirmText: '我知道了',
           success: (result) => {
             if(result.confirm){
-              
+
             }
           },
           fail: ()=>{},
           complete: ()=>{}
         })
       }else if(res.code == 0){
-       
+
       }
     })
   },
