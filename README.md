@@ -40,6 +40,7 @@
 +-- utils
 |   +-- util.js(公用方法)
 |   +-- config.js(项目配置相关)
+|   +-- load_more.js(上拉加载，下拉刷新主要逻辑)
 +-- app.js
 +-- app.json
 +-- app.wxss
@@ -47,3 +48,36 @@
 +-- project.config.json
 
 ```
+
+## components
+### f2-canvas
+> 说明：基于f2的图表组件
+github: https://github.com/antvis/wx-f2.git
+
+使用方法：
+```html
+<ff-canvas 
+  class="elementClass" 
+  id="elementId" 
+  canvas-id="canvasId" 
+  opts="{{ opts }}">
+</ff-canvas>
+
+```
+
+```js
+// 懒加载
+...
+opts: {
+  lazyLoad: true
+},
+...
+
+let weekChart = this.selectComponent('#elementId')
+weekChart.init((...arg) => {
+  initChartLine([...arg, chartData]) // 相关方法
+})
+
+```
+
+---

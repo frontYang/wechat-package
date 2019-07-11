@@ -29,7 +29,6 @@ const CONFIG = {
 
   // 图片路径
   imgBaseUrl: MODE == 'dev' ? DEV_URL_IMAGES : PROP_URL_IMAGES,
-
 }
 
 

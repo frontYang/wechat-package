@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/package/page1/page1",
-    "pages/package/page2/page2"
+    "pages/package/page2/page2",
+    "pages/package/charts/charts"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -22,6 +23,32 @@
       "pages": [
         "subpage1/subpage1",
         "subpage2/subpage2"
+      ]
+    },
+    {
+      "root": "pages/charts/",
+      "pages": [
+        "area/index",
+        "column/index",
+        "column-select/index",
+        "bar/index",
+        "dodge/index",
+        "double-axis/index",
+        "gauge/index",
+        "gradient-column/index",
+        "k/index",
+        "multiCharts/index",
+        "pie/index",
+        "pie-select/index",
+        "radar/index",
+        "radial-bar/index",
+        "ring/index",
+        "rose/index",
+        "scroll-line/index",
+        "stack-area/index",
+        "stackBar/index",
+        "steps-pan/index",
+        "line/index" 
       ]
     }
   ],
