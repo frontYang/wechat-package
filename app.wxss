@@ -1,0 +1,70 @@
+/**app.wxss**/
+.icon {
+  display: inline-block;
+}
+
+.icon-add {
+  width: "20rpx";
+  height: "20rpx";
+  background: url("images/banner/add.png") no-repeat;
+  background-size: cover;
+}
+
+.icon-arr-bd {
+  width: 20rpx;
+  height: 20rpx;
+  display: inline-block;
+  border-left: 2rpx solid #333;
+  border-top: 2rpx solid #333;
+}
+
+.icon-arr-bd.icon-arr-u {
+  transform: rotateZ(45deg);
+}
+
+.icon-arr-bd.icon-arr-r {
+  transform: rotateZ(135deg);
+}
+
+.icon-arr-bd.icon-arr-d {
+  transform: rotateZ(-135deg);
+}
+
+.icon-arr-bd.icon-arr-l {
+  transform: rotateZ(-45deg);
+}
+
+.icon-arr-pd {
+  width: 0;
+  height: 0;
+  display: inline-block;
+  border-width: 20rpx 20rpx 20rpx 20rpx;
+  border-style: solid;
+  border-color: transparent;
+}
+
+.icon-arr-pd.icon-arr-u {
+  border-bottom-color: #333;
+}
+
+.icon-arr-pd.icon-arr-r {
+  border-left-color: #333;
+}
+
+.icon-arr-pd.icon-arr-d {
+  border-top-color: #333;
+}
+
+.icon-arr-pd.icon-arr-l {
+  border-right-color: #333;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}

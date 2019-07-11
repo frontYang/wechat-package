@@ -1,0 +1,98 @@
+// 字体大小
+
+// 颜色
+$bgColor: #fff;
+$bdColor: #EFEFEF;
+
+// 按钮
+$btnBg: rgba(83, 83, 83, 1);
+
+// shadow
+$shadow: 0px -2rpx 8rpx 4rpx rgba(221, 221, 221, 0.5);
+
+// arrow
+$arrowColor: #8F8F8F;
+
+// icon var
+$card_iconname: 'add';
+$card_iconname_width: '20rpx';
+$card_iconname_height: '20rpx';
+
+// 小图标
+@mixin image($cls, $iconname, $width, $height) {
+  .#{$cls} {
+    display: inline-block;
+  }
+
+  @for $i from 1 to length($iconname)+1 {
+    .#{$cls}-#{nth($iconname, $i)} {
+      width: nth($width, $i);
+      height: nth($height, $i);
+      background: url('images/banner/'+ nth($iconname, $i) + '.png') no-repeat;
+      background-size: cover;
+    }
+  }
+}
+
+// 边框箭头 $width: 宽, $height：高, $color：边框颜色, $bd_width: 边框大小
+@mixin icon-arr-bd($width: 20rpx, $height: 20rpx, $color: #333, $bd_width: 2rpx) {
+  .icon-arr-bd {
+    width: $width;
+    height: $height;
+    display: inline-block;
+    border-left: $bd_width solid $color;
+    border-top: $bd_width solid $color;
+
+    // 上
+    &.icon-arr-u {
+      transform: rotateZ(45deg);
+    }
+
+    // 右
+    &.icon-arr-r {
+      transform: rotateZ(135deg);
+    }
+
+    // 下
+    &.icon-arr-d {
+      transform: rotateZ(-135deg);
+    }
+
+    // 左
+    &.icon-arr-l {
+      transform: rotateZ(-45deg);
+    }
+  }
+}
+
+// 实心箭头 $width: 宽, $height：高, $color：颜色
+@mixin icon-arr-pd($bd_width: 20rpx, $color: #333) {
+  .icon-arr-pd {
+    width: 0;
+    height: 0;
+    display: inline-block;
+    border-width: 20rpx 20rpx 20rpx 20rpx;
+    border-style: solid;
+    border-color: transparent;
+
+    // 上
+    &.icon-arr-u {
+      border-bottom-color: $color;
+    }
+
+    // 右
+    &.icon-arr-r {
+      border-left-color: $color;
+    }
+
+    // 下
+    &.icon-arr-d {
+      border-top-color: $color;
+    }
+
+    // 左
+    &.icon-arr-l {
+      border-right-color: $color;
+    }
+  }
+}

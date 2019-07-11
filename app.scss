@@ -1,9 +1,18 @@
 /**app.wxss**/
+@import './common/styles/_var.scss';
+
+// 引入
+@include image('icon', $card_iconname, $card_iconname_width, $card_iconname_height);
+@include icon-arr-bd();
+@include icon-arr-pd();
+
+
 .container {
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  padding: 200rpx 0;
   box-sizing: border-box;
-  height: 100%;
 }

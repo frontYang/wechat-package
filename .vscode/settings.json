@@ -1,0 +1,11 @@
+{
+  "easysass.compileAfterSave": true,
+  "easysass.excludeRegex": "^_[a-z]+",
+  "easysass.formats": [
+      {
+          "format": "expanded",
+          "extension": ".wxss"
+      }
+  ],
+  "easysass.targetDir": ""
+}
